@@ -1,0 +1,151 @@
+.header {
+    background-color: var(--color-bg-alt);
+
+    &__container {
+        padding-top: 35px;
+        background-image: url(/images/header/header__promo-right_11zon.png);
+        background-position: right;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        @include desktop {
+            background-size: 56%;
+        }
+
+        @include tablet {
+            background-image: none
+        }
+
+        @media (min-width: 1600px) {
+            max-width: calc(1600px + var(--container-padding-x) * 2);;
+            
+        }
+
+    }
+
+
+    &__upper-promo {
+        @include flex(row);
+
+        column-gap: 40px;
+        position: relative;
+        z-index: 200;
+
+        @include phone-sm {
+            column-gap: 10px;
+        }
+    }
+
+    &__menu {
+        margin-left: auto;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__burger-button {
+        margin-left: auto;
+        color: var(--color-white);
+        padding: 1px 5px;
+        cursor: pointer;
+
+        @include border-radius(var(--border-radius));
+
+        transition: var(--transition-duration);
+
+        &:active {
+            background-color: var(--color-bg)
+        }
+    }
+
+    &__menu-list {
+        @include flex(none);
+        column-gap: 10px;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__menu-item {
+        font-size: 16px;
+        color: var(--color-white);
+        border: 1px solid rgba(251, 251, 251, 0.20);
+        padding: 12px;
+        transition: var(--transition-duration);
+        @include border-radius(var(--border-radius-sm));
+
+        &:hover {
+            transform: scale(1.08);
+            background-color: var(--color-bg);
+            border: none;
+        }
+    }
+
+    &__menu-link {
+        color: var(--color-white);
+
+    }
+
+    &__button {
+        color: var(--color-white);
+        background-color: var(--color-bg);
+        padding: 16px 32px;
+        text-transform: uppercase;
+
+        @include border-radius(var(--border-radius-md));
+
+        &:hover {
+            transform: scale(1.08);
+        }
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__down-promo {
+        @include flex(row);
+
+        padding-top: 50px;
+        column-gap: 30px;
+
+        @include tablet {
+            @include flex(column);
+            text-align: center;
+        }
+    }
+
+    &__promo-title {
+        color: var(--color-white);
+        text-transform: uppercase;
+        max-width: 480px;
+        margin-bottom: 130px;
+
+        @include desktop {
+            margin-bottom: 25px;
+        }
+    }
+
+    &__promo-text {
+        color: var(--color-white);
+        max-width: 472px;
+        font-size: 16px;
+        margin-bottom: 15px;
+
+        @include tablet {
+            margin-bottom: 50px;
+        }
+    }
+
+    &__desktop-image {
+        @include tablet {
+            width: 100%;
+            height: clamp(390px, 100vh, 600px);
+            background-image: url(/images/header/header__promo-right_11zon.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+    }
+}
