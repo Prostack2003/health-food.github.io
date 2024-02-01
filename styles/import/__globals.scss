@@ -21,7 +21,7 @@
 }
 
 body {
-  @include font-size(16, 24);
+  @include font-size(18, 20);
   
   overflow-x: hidden;
   font-family: var(--font-family);
@@ -38,7 +38,7 @@ svg * {
 }
 
 h1 {
-  @include font-size(32, 76)
+  @include font-size(48, 76)
 }
 
 h2 {

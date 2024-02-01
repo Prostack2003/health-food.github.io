@@ -112,8 +112,8 @@
         column-gap: 30px;
 
         @include tablet {
-            @include flex(column);
-            text-align: center;
+            @include flex(none);
+            justify-content: start;
         }
     }
 
@@ -126,16 +126,21 @@
         @include desktop {
             margin-bottom: 25px;
         }
+
+        @include tablet {
+            max-width: 705px;
+        }
     }
 
     &__promo-text {
         color: var(--color-white);
         max-width: 472px;
-        font-size: 16px;
+        font-size: inherit;
         margin-bottom: 15px;
 
         @include tablet {
             margin-bottom: 50px;
+            max-width: 605px;
         }
     }
 
