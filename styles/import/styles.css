@@ -261,11 +261,6 @@ h3 {
   background-size: contain;
   background-repeat: no-repeat;
 }
-@media (max-width: 1281px) {
-  .header__container {
-    background-size: 56%;
-  }
-}
 @media (max-width: 1140px) {
   .header__container {
     background-image: none;

@@ -8,10 +8,6 @@
         background-size: contain;
         background-repeat: no-repeat;
 
-        @include desktop {
-            background-size: 56%;
-        }
-
         @include tablet {
             background-image: none
         }
