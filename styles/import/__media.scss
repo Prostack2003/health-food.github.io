@@ -1,0 +1,47 @@
+$desktop-over: 1440px;
+$desktop: 1281px;
+$tablet: 1140px;
+$phone: 768px;
+$phone-sm: 300px;
+
+/*Медиа-Запросы для ПК*/
+@mixin desktop {
+  @media (max-width: $desktop) {
+    @content;
+  }
+}
+
+/*Медиа-Запросы для ПК*/
+@mixin tablet {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
+
+/*Медиа-Запросы для Планшета*/
+
+@mixin phone {
+  @media (max-width: $phone) {
+    @content;
+  }
+}
+
+/*Медиа-Запросы для Планшета*/
+
+/*Медиа-Запросы для Телефонов*/
+@mixin phone-sm {
+  @media (max-width: $phone-sm) {
+    @content;
+  }
+}
+
+/*Медиа-Запросы для Телефонов*/
+
+/*Спецефичные Медиа-Запросы*/
+@mixin desktop-over {
+  @media (max-width: $desktop-over) {
+    @content;
+  }
+}
+
+/*Спецефичные Медиа-Запросы*/

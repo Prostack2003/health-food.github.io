@@ -1,0 +1,400 @@
+@charset "UTF-8";
+/**
+  Нормализация блочной модели
+ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/**
+   Убираем внутренние отступы слева тегам списков,
+   у которых есть атрибут class
+  */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/**
+   Убираем внешние отступы body и двум другим тегам,
+   у которых есть атрибут class
+  */
+body,
+:where(blockquote, figure):where([class]) {
+  margin: 0;
+}
+
+/**
+   Убираем внешние отступы вертикали нужным тегам,
+   у которых есть атрибут class
+  */
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl):where([class]) {
+  margin-block: 0;
+}
+
+:where(dd[class]) {
+  margin-left: 0;
+}
+
+:where(fieldset[class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+/**
+   Убираем стандартный маркер маркированному списку,
+   у которого есть атрибут class
+  */
+:where(ul[class]) {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/**
+   Обнуляем вертикальные внешние отступы параграфа,
+   объявляем локальную переменную для внешнего отступа вниз,
+   чтобы избежать взаимодействие с более сложным селектором
+  */
+p {
+  --paragraphMarginBottom: 24px;
+  margin-block: 0;
+  cursor: default;
+}
+
+span {
+  cursor: default;
+}
+
+/**
+   Внешний отступ вниз для параграфа без атрибута class,
+   который расположен не последним среди своих соседних элементов
+  */
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraphMarginBottom);
+}
+
+/**
+   Наследуем свойства шрифт для полей ввода
+  */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+html {
+  /**
+     Пригодится в большинстве ситуаций
+     (когда, например, нужно будет "прижать" футер к низу сайта)
+    */
+  height: 100%;
+  /**
+     Плавный скролл
+    */
+  scroll-behavior: smooth;
+}
+
+body {
+  /**
+     Пригодится в большинстве ситуаций
+     (когда, например, нужно будет "прижать" футер к низу сайта)
+    */
+  min-height: 100%;
+  /**
+     Унифицированный интерлиньяж
+    */
+  line-height: 1.5;
+}
+
+/**
+   Приводим к единому цвету svg-элементы
+  */
+svg *[fill] {
+  fill: currentColor;
+}
+
+svg *[stroke] {
+  stroke: currentColor;
+}
+
+/**
+   Чиним баг задержки смены цвета при взаимодействии с svg-элементами
+  */
+svg * {
+  transition-property: fill, stroke;
+}
+
+/**
+   Удаляем все анимации и переходы для людей,
+   которые предпочитают их не использовать
+  */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+/*Медиа-Запросы для ПК*/
+/*Медиа-Запросы для ПК*/
+/*Медиа-Запросы для Планшета*/
+/*Медиа-Запросы для Планшета*/
+/*Медиа-Запросы для Телефонов*/
+/*Медиа-Запросы для Телефонов*/
+/*Спецефичные Медиа-Запросы*/
+/*Спецефичные Медиа-Запросы*/
+:root {
+  /*Цвета*/
+  --color-dark: #141414;
+  --color-white: #fbfbfb;
+  --color-bg: #7a3145;
+  --color-bg-alt: #576f35;
+  /*Цвета*/
+  /*Шрифт*/
+  --font-family: "Poppins", sans-serif;
+  /*Шрифт*/
+  /*Величины*/
+  --container-width: 1280px;
+  --container-padding-x: 20px;
+  --border-radius-sm: 15px;
+  --border-radius-md: 30px;
+  --border-radius-lg: 100px;
+  --transition-duration: 0.2s;
+  /*Величины*/
+}
+
+.container {
+  max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+  margin-inline: auto;
+  padding-inline: var(--container-padding-x);
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  aspect-ratio: 1 !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  -webkit-clip-path: inset(100%) !important;
+          clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+.desktop-hidden {
+  display: none;
+}
+@media (max-width: 1140px) {
+  .desktop-hidden {
+    display: inline-block;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+body {
+  font-size: clamp(16px, 2vw, 24px);
+  overflow-x: hidden;
+  font-family: var(--font-family);
+  font-weight: 400;
+  line-height: 1.27;
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+  transition: var(--transition-duration);
+}
+
+h1 {
+  font-size: clamp(32px, 6.3333333333vw, 76px);
+}
+
+h2 {
+  font-size: clamp(24px, 5.3333333333vw, 64px);
+}
+
+h3 {
+  font-size: clamp(16px, 2.6666666667vw, 32px);
+}
+
+.button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.header {
+  background-color: var(--color-bg-alt);
+}
+.header__container {
+  padding-top: 35px;
+  background-image: url(/images/header/header__promo-right_11zon.png);
+  background-position: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+@media (max-width: 1281px) {
+  .header__container {
+    background-size: 56%;
+  }
+}
+@media (max-width: 1140px) {
+  .header__container {
+    background-image: none;
+  }
+}
+@media (min-width: 1600px) {
+  .header__container {
+    max-width: calc(1600px + var(--container-padding-x) * 2);
+  }
+}
+.header__upper-promo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+  position: relative;
+  z-index: 200;
+}
+@media (max-width: 300px) {
+  .header__upper-promo {
+    -moz-column-gap: 10px;
+         column-gap: 10px;
+  }
+}
+.header__menu {
+  margin-left: auto;
+}
+@media (max-width: 1140px) {
+  .header__menu {
+    display: none;
+  }
+}
+.header__burger-button {
+  margin-left: auto;
+  color: var(--color-white);
+  padding: 1px 5px;
+  cursor: pointer;
+  border-radius: 30%;
+  transition: var(--transition-duration);
+}
+.header__burger-button:active {
+  background-color: var(--color-bg);
+}
+.header__menu-list {
+  display: flex;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
+}
+@media (max-width: 1140px) {
+  .header__menu-list {
+    display: none;
+  }
+}
+.header__menu-item {
+  font-size: 16px;
+  color: var(--color-white);
+  border: 1px solid rgba(251, 251, 251, 0.2);
+  padding: 12px;
+  transition: var(--transition-duration);
+  border-radius: var(--border-radius-sm);
+}
+.header__menu-item:hover {
+  transform: scale(1.08);
+  background-color: var(--color-bg);
+  border: none;
+}
+.header__menu-link {
+  color: var(--color-white);
+}
+.header__button {
+  color: var(--color-white);
+  background-color: var(--color-bg);
+  padding: 16px 32px;
+  text-transform: uppercase;
+  border-radius: var(--border-radius-md);
+}
+.header__button:hover {
+  transform: scale(1.08);
+}
+@media (max-width: 1140px) {
+  .header__button {
+    display: none;
+  }
+}
+.header__down-promo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 50px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+}
+@media (max-width: 1140px) {
+  .header__down-promo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+  }
+}
+.header__promo-title {
+  color: var(--color-white);
+  text-transform: uppercase;
+  max-width: 480px;
+  margin-bottom: 130px;
+}
+@media (max-width: 1281px) {
+  .header__promo-title {
+    margin-bottom: 25px;
+  }
+}
+.header__promo-text {
+  color: var(--color-white);
+  max-width: 472px;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+@media (max-width: 1140px) {
+  .header__promo-text {
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: 1140px) {
+  .header__desktop-image {
+    width: 100%;
+    height: clamp(390px, 100vh, 600px);
+    background-image: url(/images/header/header__promo-right_11zon.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+}/*# sourceMappingURL=styles.css.map */
