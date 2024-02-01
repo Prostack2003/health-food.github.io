@@ -11,12 +11,6 @@
         @include tablet {
             background-image: none
         }
-
-        @media (min-width: 1600px) {
-            max-width: calc(1600px + var(--container-padding-x) * 2);;
-            
-        }
-
     }
 
 
