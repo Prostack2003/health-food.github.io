@@ -4,7 +4,8 @@
   padding-inline: var(--container-padding-x);
 
   @media (min-width: 1600px) {
-    max-width: calc(1600px + var(--container-padding-x) * 2);;
+    max-width: calc(1600px + var(--container-padding-x) * 2);
+    ;
   }
 }
 
@@ -26,7 +27,7 @@
 
 body {
   @include font-size(18, 20);
-  
+
   overflow-x: hidden;
   font-family: var(--font-family);
   font-weight: 400;
@@ -42,15 +43,18 @@ svg * {
 }
 
 h1 {
-  @include font-size(48, 76)
+  @include font-size(48, 76);
+  cursor: default;
 }
 
 h2 {
-  @include font-size(24, 64)
+  @include font-size(24, 48);
+  cursor: default;
 }
 
 h3 {
-  @include font-size(16, 32)
+  @include font-size(16, 32);
+  cursor: default;
 }
 
 
