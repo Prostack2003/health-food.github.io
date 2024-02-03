@@ -120,6 +120,10 @@
         @include tablet {
             max-width: 705px;
         }
+
+        @include phone-sm {
+            font-size: 32px;
+        }
     }
 
     &__promo-text {
@@ -132,6 +136,10 @@
             margin-bottom: 50px;
             max-width: 605px;
         }
+
+        @include phone-sm {
+            max-width: 330px;
+        }
     }
 
     &__desktop-image {
@@ -141,6 +149,11 @@
             background-image: url(/images/header/header__promo-right_11zon.png);
             background-size: 100%;
             background-repeat: no-repeat;
+        }
+
+        @include phone {
+            height: clamp(390px, 50vh, 600px);
+            ;
         }
     }
 }
