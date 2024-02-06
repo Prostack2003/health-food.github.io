@@ -3,7 +3,7 @@
 
     &__container {
         padding-top: 35px;
-        background-image: url(/images/header/header__promo-right_11zon.png);
+        background-image: url(../../images/header/header__promo-right_11zon.png);
         background-position: right;
         background-size: contain;
         background-repeat: no-repeat;
@@ -113,6 +113,10 @@
         max-width: 480px;
         margin-bottom: 130px;
 
+        @include tablet-over {
+            font-size: 70px;
+        }
+
         @include desktop {
             margin-bottom: 25px;
         }
@@ -146,7 +150,7 @@
         @include tablet {
             width: 100%;
             height: clamp(390px, 100vh, 600px);
-            background-image: url(/images/header/header__promo-right_11zon.png);
+            background-image: url(../../images/header/header__promo-right_11zon.png);
             background-size: 100%;
             background-repeat: no-repeat;
         }

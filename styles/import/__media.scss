@@ -44,4 +44,10 @@ $phone-sm: 390px;
   }
 }
 
+@mixin tablet-over {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
 /*Спецефичные Медиа-Запросы*/
