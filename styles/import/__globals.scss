@@ -57,6 +57,21 @@ h3 {
   cursor: default;
 }
 
+.h1 {
+  @include font-size(48, 76);
+  cursor: default;
+}
+
+.h2 {
+  @include font-size(24, 48);
+  cursor: default;
+}
+
+.h3 {
+  @include font-size(16, 32);
+  cursor: default;
+}
+
 
 .button {
   @include reset-button

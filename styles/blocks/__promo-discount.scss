@@ -1,0 +1,34 @@
+.promo-discount {
+    &__header {
+        padding: 100px;
+
+        @include desktop-over {
+            display: flex;
+            justify-content: center;
+        }
+
+        @include phone {
+            padding: 25px;
+        }
+    }
+
+    &__heading {
+        max-width: 1140px;
+        text-transform: uppercase;
+
+        @include desktop-over {
+            max-width: 1280px;
+        }
+
+        @include phone-sm {
+            font-size: 32px;
+        }
+    }
+
+    &__text {
+        background-color: var(--color-bg-alt);
+        color: var(--color-white);
+
+        @include border-radius(var(--border-radius-sm))
+    }
+}

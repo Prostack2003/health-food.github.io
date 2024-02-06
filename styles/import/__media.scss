@@ -39,7 +39,7 @@ $phone-sm: 390px;
 
 /*Спецефичные Медиа-Запросы*/
 @mixin desktop-over {
-  @media (max-width: $desktop-over) {
+  @media (min-width: $desktop-over) {
     @content;
   }
 }

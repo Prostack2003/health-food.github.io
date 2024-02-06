@@ -253,6 +253,21 @@ h3 {
   cursor: default;
 }
 
+.h1 {
+  font-size: clamp(48px, 6.3333333333vw, 76px);
+  cursor: default;
+}
+
+.h2 {
+  font-size: clamp(24px, 4vw, 48px);
+  cursor: default;
+}
+
+.h3 {
+  font-size: clamp(16px, 2.6666666667vw, 32px);
+  cursor: default;
+}
+
 .button {
   padding: 0;
   background-color: transparent;
@@ -494,4 +509,38 @@ h3 {
 .order__list__image-item {
   width: 52px;
   height: 52px;
+}
+
+.promo-discount__header {
+  padding: 100px;
+}
+@media (min-width: 1440px) {
+  .promo-discount__header {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (max-width: 768px) {
+  .promo-discount__header {
+    padding: 25px;
+  }
+}
+.promo-discount__heading {
+  max-width: 1140px;
+  text-transform: uppercase;
+}
+@media (min-width: 1440px) {
+  .promo-discount__heading {
+    max-width: 1280px;
+  }
+}
+@media (max-width: 390px) {
+  .promo-discount__heading {
+    font-size: 32px;
+  }
+}
+.promo-discount__text {
+  background-color: var(--color-bg-alt);
+  color: var(--color-white);
+  border-radius: var(--border-radius-sm);
 }/*# sourceMappingURL=styles.css.map */
