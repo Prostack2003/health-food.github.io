@@ -29,9 +29,17 @@ body {
   @include font-size(18, 20);
 
   overflow-x: hidden;
-  font-family: var(--font-family);
+}
+
+body * {
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   line-height: 1.27;
+}
+
+strong,
+b {
+  font-weight: bold;
 }
 
 a,
