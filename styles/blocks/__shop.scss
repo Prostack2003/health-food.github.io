@@ -2,6 +2,14 @@
     padding: 150px 100px;
     background-color: var(--color-bg);
 
+    @include phone {
+        padding: 70px 30px;
+    }
+
+    @include phone-sm {
+        padding: 50px 0px;
+    }
+
     &__header {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -11,6 +19,14 @@
     &__text-container {
         line-height: normal;
         color: var(--color-white);
+
+        @include tablet {
+            grid-column: 1 / 3;
+        }
+
+        @include phone {
+            grid-column: 1 / 4;
+        }
     }
 
     &__heading {
@@ -34,6 +50,16 @@
         height: 50px;
         transition: var(--transition-duration);
 
+        @include tablet {
+            grid-column: 1 / 3;
+            grid-row: 3;
+            justify-self: center;
+        }
+
+        @include phone {
+            grid-column: 1 / 3;
+        }
+
         &:hover {
             transform: scale(1.08);
             background-color: var(--color-bg-alt);
@@ -45,8 +71,19 @@
         grid-column: 1 / 4;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(3, 1fr);
         gap: 20px;
+
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include phone {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        @include phone-sm {
+            grid-template-columns: repeat(1, 1fr);
+        }
 
         &-heading {
             color: var(--color-bg);
@@ -76,6 +113,11 @@
         &-image {
             margin-bottom: 50px;
             align-self: center;
+
+            @include phone-sm {
+                max-width: 200px;
+                aspect-ratio: 1;
+            }
         }
     }
 }
