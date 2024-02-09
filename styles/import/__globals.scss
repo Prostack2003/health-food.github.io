@@ -13,6 +13,12 @@
   @include visually-hidden;
 }
 
+.mobile-hidden {
+  @include phone {
+    display: none !important;
+  }
+}
+
 .desktop-hidden {
   display: none;
 

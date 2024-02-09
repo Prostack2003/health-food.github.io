@@ -206,6 +206,12 @@ svg * {
   overflow: hidden !important;
 }
 
+@media (max-width: 768px) {
+  .mobile-hidden {
+    display: none !important;
+  }
+}
+
 .desktop-hidden {
   display: none;
 }
@@ -729,4 +735,9 @@ h3 {
 .reviews-card__text {
   font-size: clamp(16px, 1.6666666667vw, 20px);
   opacity: 0.5;
+}
+
+.footer {
+  background-color: var(--color-bg);
+  padding-top: 150px;
 }/*# sourceMappingURL=styles.css.map */
