@@ -314,7 +314,8 @@
       <div class="footer__container container">
         <div class="footer__wrapper">
           <h4 class="footer__wrapper-heading">
-            Fresh Harvest Box has got you covered
+            Fresh <span class="footer__wrapper-text">Harvest</span> Box has got
+            you covered
           </h4>
           <p class="footer__wrapper-description">
             Our boxes are packed with delicious, nutritious vegetables, perfect
@@ -335,31 +336,36 @@
               >
               below and we will contact you !
             </label>
-            <input
-              class="footer__contact-name"
-              type="text"
-              name="name"
-              placeholder="Full Name"
-              required
-            />
-            <input
-              class="footer__contact-email"
-              type="email"
-              name="email"
-              placeholder="Email"
-              required
-            />
-            <textarea
-              class="footer__contact-comment"
-              name="comment"
-              placeholder="Comment"
-            ></textarea>
+            <div class="footer__contact-form-inputs">
+              <span class="visually-hidden">Name</span>
+              <input
+                class="footer__contact-name"
+                type="text"
+                name="name"
+                placeholder="Full Name"
+                required
+              />
+              <span class="visually-hidden">Email</span>
+              <input
+                class="footer__contact-email"
+                type="email"
+                name="email"
+                placeholder="Email"
+                required
+              />
+              <span class="visually-hidden">Comment</span>
+              <textarea
+                class="footer__contact-comment"
+                name="comment"
+                placeholder="Comment"
+              ></textarea>
+            </div>
             <button class="footer__contact-button" type="submit">Send</button>
           </form>
           <div class="footer__socials">
             <img
               class="footer__socials-image"
-              src=""
+              src="images/footer/social-image.png"
               width="427"
               height="273"
               loading="lazy"
@@ -375,10 +381,17 @@
             </div>
           </div>
         </div>
-        <div class="footer__wrapper-under">
-          <div class="footer__wrapper-left">
-            <img class="footer__left-image" src="" alt="" />
-            <p class="footer__left-text">
+        <div class="footer__under">
+          <div class="footer__under-left">
+            <img
+              class="footer__under-left-image"
+              src="images/footer/logo.svg"
+              width="194"
+              height="18"
+              loading="lazy"
+              alt=""
+            />
+            <p class="footer__under-left-text">
               Whether you're looking for a healthy snack or a thoughtful gift,
               our fruit baskets are the perfect choice.
             </p>
@@ -404,8 +417,10 @@
           </div>
         </div>
         <div class="footer__down">
-          <a class="footer__down-link" href="">Privacy Policy</a>
-          <a class="footer__down-link" href="">/ Cookie settings</a>
+          <div class="footer__down-links">
+            <a class="footer__down-link" href="">Privacy Policy</a>
+            <a class="footer__down-link" href="">/ Cookie settings</a>
+          </div>
           <span class="footer__down-logo">©Green Harvest 2023</span>
         </div>
       </div>
