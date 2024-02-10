@@ -1,3 +1,208 @@
 .footer {
     background-color: var(--color-bg);
+    padding-top: 150px;
+    min-height: 100%;
+
+    &__wrapper {
+        &-heading {
+            @include font-size(32, 64);
+
+            max-width: 760px;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: var(--color-white);
+            margin-bottom: 25px;
+        }
+
+        &-text {
+            opacity: 0.5;
+        }
+
+        &-description {
+            @include font-size(16, 16);
+
+            max-width: 810px;
+            color: var(--color-white);
+            margin-bottom: 50px;
+        }
+    }
+
+    &__contact {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 150px;
+
+        &-description {
+            @include font-size(24, 24);
+            font-weight: bold;
+            text-transform: uppercase;
+            max-width: 548px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            padding-inline: 50px;
+        }
+
+        &-text {
+            font-weight: bold;
+
+            &--pink {
+                color: var(--color-bg);
+            }
+
+            &--green {
+                color: var(--color-bg-alt);
+            }
+        }
+
+
+        &-form {
+            display: flex;
+            flex-direction: column;
+            background-color: var(--color-white);
+
+            @include border-radius(var(--border-radius-md));
+
+            &-inputs {
+                display: flex;
+                flex-direction: column;
+                row-gap: 15px;
+                padding-inline: 50px;
+                margin-bottom: 25px;
+
+            }
+        }
+
+        &-name,
+        &-email,
+        &-comment {
+            border: 1px solid rgb(202, 202, 202);
+            @include border-radius(var(--border-radius-md));
+            height: 52px;
+            padding-inline: 16px;
+
+            &::placeholder {
+                color: #000;
+            }
+        }
+
+        &-comment {
+            height: 100px;
+            resize: none;
+            padding-top: 16px;
+        }
+
+        &-button {
+            padding: 16px 189px;
+            margin-bottom: 50px;
+            align-self: center;
+            border: none;
+            color: var(--color-white);
+            background-color: var(--color-bg-alt);
+            transition: var(--transition-duration);
+
+            @include border-radius(var(--border-radius-md));
+
+            &:hover {
+                scale: 1.05;
+                background-color: var(--color-bg);
+            }
+        }
+    }
+
+    &__socials {
+        display: flex;
+        flex-direction: column;
+        padding-inline: 50px;
+        background-color: var(--color-bg-alt);
+
+        @include border-radius(var(--border-radius-md));
+
+        &-image {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        &-text {
+            margin-bottom: 15px;
+
+            @include font-size(18, 18);
+            color: rgb(225, 225, 225);
+            opacity: 0.5;
+        }
+
+        &-links {
+            max-width: 380px
+        }
+
+        &__item {
+            @include font-size(32, 32);
+
+            color: var(--color-white);
+            font-weight: bold;
+            transition: var(--transition-duration);
+        }
+    }
+
+    &__under {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 125px;
+        color: var(--color-white);
+
+        &-left {
+            &-image {
+                display: inline-block;
+                margin-bottom: 25px;
+            }
+
+            &-text {
+                @include font-size(18, 18);
+
+                max-width: 370px;
+            }
+        }
+
+        &-list {
+            @include font-size(32, 32);
+
+            display: flex;
+            flex-direction: column;
+            row-gap: 25px;
+            text-transform: lowercase;
+        }
+
+        &-link {
+            color: var(--color-white);
+        }
+
+        &-right {
+            max-width: 250px;
+        }
+
+    }
+
+    &__right-phone {
+        display: inline-block;
+        color: var(--color-white);
+        margin-bottom: 25px;
+    }
+
+    &__right-adress {
+        font-style: normal;
+    }
+
+    &__down {
+        display: flex;
+        justify-content: space-between;
+        opacity: 0.5;
+        min-height: 30px;
+
+        &-link {
+            color: var(--color-white);
+        }
+
+        &-logo {
+            color: var(--color-white);
+        }
+    }
 }
