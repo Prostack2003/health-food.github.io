@@ -3,6 +3,14 @@
     padding-top: 150px;
     min-height: 100%;
 
+    @include desktop {
+        &__container {
+            display: flex;
+            flex-direction: column;
+            align-items: center
+        }
+    }
+
     &__wrapper {
         &-heading {
             @include font-size(32, 64);
@@ -30,7 +38,14 @@
     &__contact {
         display: flex;
         justify-content: space-between;
+        row-gap: 30px;
         margin-bottom: 150px;
+        flex-wrap: wrap;
+
+        @include desktop {
+            justify-content: center;
+            column-gap: 30px;
+        }
 
         &-description {
             @include font-size(24, 24);
@@ -62,6 +77,14 @@
 
             @include border-radius(var(--border-radius-md));
 
+            @include tablet {
+                padding-inline: 60px;
+            }
+
+            @include phone {
+                padding-inline: 0px;
+            }
+
             &-inputs {
                 display: flex;
                 flex-direction: column;
@@ -92,15 +115,25 @@
         }
 
         &-button {
-            padding: 16px 189px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 300px;
+            margin-inline: auto;
+            padding: 16px 225px;
             margin-bottom: 50px;
-            align-self: center;
             border: none;
             color: var(--color-white);
             background-color: var(--color-bg-alt);
             transition: var(--transition-duration);
 
             @include border-radius(var(--border-radius-md));
+
+            @media (max-width: 576px) {
+                padding: 16px 0px;
+                max-width: 200px;
+            }
 
             &:hover {
                 scale: 1.05;
@@ -112,14 +145,34 @@
     &__socials {
         display: flex;
         flex-direction: column;
-        padding-inline: 50px;
+        padding-inline: 60px;
+        padding-bottom: 50px;
         background-color: var(--color-bg-alt);
 
         @include border-radius(var(--border-radius-md));
 
+        @include tablet {
+            padding-inline: 120px;
+        }
+
+        @include phone {
+            padding-inline: 60px;
+        }
+
+        @media (max-width: 576px) {
+            padding-inline: 0px;
+            width: 100%;
+            align-items: center;
+        }
+
         &-image {
             margin-top: 50px;
             margin-bottom: 50px;
+
+            @media (max-width: 567px) {
+                width: 70%;
+                height: 70%;
+            }
         }
 
         &-text {
@@ -131,7 +184,11 @@
         }
 
         &-links {
-            max-width: 380px
+            max-width: 380px;
+
+            @media (max-width: 567px) {
+                text-align: center;
+            }
         }
 
         &__item {
@@ -140,6 +197,10 @@
             color: var(--color-white);
             font-weight: bold;
             transition: var(--transition-duration);
+
+            @media (max-width: 567px) {
+                @include font-size(24, 24);
+            }
         }
     }
 
