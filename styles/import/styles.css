@@ -934,6 +934,12 @@ h3 {
   margin-bottom: 125px;
   color: var(--color-white);
 }
+@media (max-width: 1310px) {
+  .footer__under {
+    -moz-column-gap: 140px;
+         column-gap: 140px;
+  }
+}
 .footer__under-left-image {
   display: inline-block;
   margin-bottom: 25px;

@@ -210,6 +210,10 @@
         margin-bottom: 125px;
         color: var(--color-white);
 
+        @include desktop {
+            column-gap: 140px;
+        }
+
         &-left {
             &-image {
                 display: inline-block;
