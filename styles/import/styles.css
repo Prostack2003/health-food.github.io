@@ -590,6 +590,7 @@ h3 {
 .shop__heading {
   max-width: 500px;
   text-transform: uppercase;
+  font-size: clamp(42px, 5.3333333333vw, 64px);
 }
 .shop__paragraph {
   max-width: 620px;
@@ -668,7 +669,6 @@ h3 {
 }
 @media (max-width: 390px) {
   .shop__list-image {
-    max-width: 200px;
     aspect-ratio: 1;
   }
 }

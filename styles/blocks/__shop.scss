@@ -32,6 +32,8 @@
     &__heading {
         max-width: 500px;
         text-transform: uppercase;
+
+        @include font-size(42, 64);
     }
 
     &__paragraph {
@@ -115,7 +117,6 @@
             align-self: center;
 
             @include phone-sm {
-                max-width: 200px;
                 aspect-ratio: 1;
             }
         }
