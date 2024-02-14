@@ -940,6 +940,12 @@ h3 {
          column-gap: 140px;
   }
 }
+@media (max-width: 768px) {
+  .footer__under {
+    flex-wrap: wrap;
+    row-gap: 40px;
+  }
+}
 .footer__under-left-image {
   display: inline-block;
   margin-bottom: 25px;
@@ -972,6 +978,8 @@ h3 {
 .footer__down {
   display: flex;
   justify-content: space-between;
+  -moz-column-gap: 150px;
+       column-gap: 150px;
   opacity: 0.5;
   min-height: 30px;
 }
