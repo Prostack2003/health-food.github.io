@@ -47,6 +47,8 @@
         max-width: 700px;
         text-transform: uppercase;
 
+        @include font-size(32, 64);
+
         &-text {
             opacity: 30%;
         }

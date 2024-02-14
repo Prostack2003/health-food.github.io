@@ -17,6 +17,8 @@
         text-transform: uppercase;
         font-weight: bold;
 
+        @include font-size(48, 64);
+
         @include desktop-over {
             max-width: 1280px;
         }
